@@ -3,16 +3,16 @@
 
 <header class="main-header">
     <div class="row">
-        <div class="header-right col-md-4">
-            <a href="#">qminh</a>
+        <div class="header-right col-md-4 fade-in">
+            <a href="homepage.html">qminh</a>
         </div>
 
-        <div class="header-navbar col-md-4">
+        <div class="header-navbar col-md-4 float-in">
             <a href="#">Filmography</a>
             <a href="#">Photography</a>
             <a href="#">Development</a>
             <a href="#">Contact</a>
-           
+
         </div>
     </div>
 </header>
@@ -33,12 +33,20 @@
         font-weight: bold;
     }
 
+    .header-right a:hover {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
     .header-navbar {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;       
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
     .header-navbar a {
@@ -46,5 +54,66 @@
         text-decoration: none;
         text-align: left;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    /* Animation classes */
+    .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .float-in {
+        animation: floatIn 0.7s ease-out;
+    }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes floatIn {
+        from {
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    /* Staggered animations for navbar links */
+    .header-navbar a:nth-child(1) {
+        animation: slideIn 0.3s ease-out 0.1s both;
+    }
+
+    .header-navbar a:nth-child(2) {
+        animation: slideIn 0.3s ease-out 0.2s both;
+    }
+
+    .header-navbar a:nth-child(3) {
+        animation: slideIn 0.3s ease-out 0.3s both;
+    }
+
+    .header-navbar a:nth-child(4) {
+        animation: slideIn 0.3s ease-out 0.4s both;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 </style>

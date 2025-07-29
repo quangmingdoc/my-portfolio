@@ -8,11 +8,27 @@
     <!--boostrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #footer{
+            margin-top: auto;
+        }
+    </style>
 </head>
 
 <body>
     <div id="header"></div>
-
+    
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -20,6 +36,8 @@
             </div>
         </div>
     </div>
+
+    <div id="footer"></div>
 
     <!--import header-->
     <script>
@@ -31,6 +49,19 @@
             .catch(error => {
                 console.error('Error loading header:', error);
                 document.getElementById('header').innerHTML = '<header class="main-header"><h1>Chào mừng đến với Portfolio của tôi</h1></header>';
+            });
+    </script>
+
+    <!--import footer-->
+    <script>
+        fetch('view/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+                document.getElementById('footer').innerHTML = '<footer class="main-footer"><h1>Chào mừng đến với Portfolio của tôi</h1></footer>';
             });
     </script>
 </body>
