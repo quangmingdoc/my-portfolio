@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qminh</title>
+    <!--boostrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Chào mừng đến với Portfolio của tôi</h1>
+            </div>
+        </div>
+    </div>
+
+    <!--import header-->
+    <script>
+        fetch('view/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+                document.getElementById('header').innerHTML = '<header class="main-header"><h1>Chào mừng đến với Portfolio của tôi</h1></header>';
+            });
+    </script>
+</body>
+
+</html>
