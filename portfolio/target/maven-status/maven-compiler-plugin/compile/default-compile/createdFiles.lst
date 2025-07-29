@@ -1,0 +1,3 @@
+com\mycompany\portfolio\resources\PortfolioResource.class
+com\mycompany\portfolio\JakartaRestConfiguration.class
+com\mycompany\portfolio\resources\JakartaEE10Resource.class
